@@ -117,7 +117,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
+    <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -131,12 +131,12 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Startseite</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archiv</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
   </li>
   </ul>
@@ -164,7 +164,7 @@
         
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/Serious%20Cryptography/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -196,7 +196,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Bearbeitet am</span>
-                <time title="Geändert am: 2020-02-04 02:48:15" itemprop="dateModified" datetime="2020-02-04T02:48:15-05:00">2020-02-04</time>
+                <time title="Geändert am: 2020-02-04 03:57:05" itemprop="dateModified" datetime="2020-02-04T03:57:05-05:00">2020-02-04</time>
               </span>
 
           
@@ -210,33 +210,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Serious-Cryptography"><a href="#Serious-Cryptography" class="headerlink" title="Serious Cryptography"></a>Serious Cryptography</h1><p>Jean Philippe Aumasson</p>
-<h2 id="Vigenere-Cipher"><a href="#Vigenere-Cipher" class="headerlink" title="Vigenère  Cipher"></a><em>Vigenère  Cipher</em></h2><p>The first step to breaking it is to figure out the key’s length.</p>
-<p>The second step to breaking it is to determine the actual key using a method  called <em>frequency analysis</em>, which exploit the uneven distribution of letters in languages. For example, in English, <em>E</em> is the most common letter.</p>
-<h2 id="How-Ciphers-Work"><a href="#How-Ciphers-Work" class="headerlink" title="How Ciphers Work"></a>How Ciphers Work</h2><p>We can try to abstract out the workings of a cipher, first by identifying its two main components:  a permutation and a mode of operation. A <em>permutation</em> is a function that transforms an item (a letter or a group of bits) such that each item has a unique inverse(for example, the Caesar cipher’s three-letter shift).A <em>mode of operation</em> is an algorithm that uses a permutation to process messages of arbitrary size.</p>
-<h3 id="The-Permutation"><a href="#The-Permutation" class="headerlink" title="The Permutation"></a><em>The Permutation</em></h3><p>Most classical ciphers work by replacing each letter with another letter– in other words, bu performing a substitution. </p>
-<p>With a permutation, each letter has exactly one inverse.</p>
-<p>In order to be secure, a cipher’s permutation should satisfy three criteria：</p>
-<ul>
-<li><p><strong>The permutation should be determined by the key.</strong> so as to keep the permutation secret as long as the key is secret.</p>
-</li>
-<li><p><strong>Different keys should result in different permutations.</strong>  </p>
-</li>
-<li><p><strong>The permutation should look random.</strong></p>
-</li>
-</ul>
-<p>We’ll call a permutation that satisfies these criteria a <em>secure permutation.</em> But as you’ll see next, a secure permutation is necessary but not sufficient on its own for building a secure cipher. A cipher will also need a mode o operation to support message of any length.</p>
-<h3 id="The-Mode-of-Operation"><a href="#The-Mode-of-Operation" class="headerlink" title="The Mode of Operation"></a><em>The Mode of Operation</em></h3><p>To build a secure cipher, you must combine a secure permutation with a secure mode. Ideally, this combination prevents attackers from learning  anything about a message other than its length.</p>
-<h3 id="Why-Classical-Ciphers-Are-Insecure"><a href="#Why-Classical-Ciphers-Are-Insecure" class="headerlink" title="Why Classical Ciphers Are Insecure"></a><em>Why Classical Ciphers Are Insecure</em></h3><p>Classical ciphers are doomed to be insecure because they’re limited to operations you can do in your head or on a piece of paper.  They lack the computational power of a computer and are easily broken by simple commuter program. Let’s see the fundamental reason why that simplicity makes them insecure in today’s world.</p>
-<p>Remember that a ciphers’ permutation should look random in order to be secure. of course the best way to look random is to be random- that is . to select every permutation randomly from the set of all permutations. And there are many permutations to choose from. In the case of 26-letter English alphabet, there are approximately </p>
-<p>2^88^  permutations</p>
-<p>​                                        $26! ≈ 2^{88}$</p>
-<p>This number is huge: it’s of the same order of magnitude as the number of atoms in human body. But classical ciphers can only use a small fraction of those permutations-namely, those that need only simple operations(such as shifts)  and that have a short description(like a short algorithm or a small look-up table). The problem is that a secure permutation can’t accommodate both of these limitations.</p>
-<h2 id="Perfect-Encryption-The-One-Time-Pad"><a href="#Perfect-Encryption-The-One-Time-Pad" class="headerlink" title="Perfect Encryption: The One-Time Pad"></a>Perfect Encryption: The One-Time Pad</h2><p>the one-time pad is the most secure cipher. In fact, it guarantees perfect secrecy: even if an attacker has unlimited computing power, it’s impossible to learn anything about the plaintext except for its length</p>
-<h3 id="Encrypting-with-the-One-Time-Pad"><a href="#Encrypting-with-the-One-Time-Pad" class="headerlink" title="Encrypting with the One-Time Pad"></a><em>Encrypting with the One-Time Pad</em></h3><p>​                                    $C = P \oplus K$</p>
-<p>where C, P and K are bit strings of the same length</p>
-<p>$C_{1} \oplus C_{2} = ( P_{1} \oplus K )   \oplus ( P2 \oplus K ) = P_{1} \oplus P_{2} \oplus K \oplus K = P_{1} \oplus P_{2}$ </p>
-
+          simple cryptography
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/04/Serious%20Cryptography/">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -391,7 +373,7 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">Artikel</span>
+          <span class="site-state-item-name">posts</span>
         </a>
       </div>
   </nav>
@@ -422,10 +404,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Qasak</span>
 </div>
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">Design – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
   </div>
 
         
@@ -454,7 +436,7 @@
 <script src="/js/schemes/muse.js"></script>
 
 
-<script src="/js/next-boot.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -476,6 +458,56 @@
 
 
   
+
+  
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
 
   
 
