@@ -46,22 +46,21 @@
   };
 </script>
 
-  <meta name="description" content="simple cryptography">
+  <meta name="description" content="from Peter Norvig&#39;s pytudes project">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Serious Cryptography">
-<meta property="og:url" content="http://yoursite.com/2020/02/04/Serious%20Cryptography/index.html">
+<meta property="og:title" content="约翰康威的生命游戏">
+<meta property="og:url" content="http://yoursite.com/2020/02/05/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/index.html">
 <meta property="og:site_name" content="Qasak&#39;s QQ Space">
-<meta property="og:description" content="simple cryptography">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-04T03:48:01.945Z">
-<meta property="article:modified_time" content="2020-02-04T09:05:35.715Z">
+<meta property="og:description" content="from Peter Norvig&#39;s pytudes project">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-02-05T08:29:57.557Z">
+<meta property="article:modified_time" content="2020-02-05T15:41:12.630Z">
 <meta property="article:author" content="Qasak">
-<meta property="article:tag" content="Vigenere Cipher">
-<meta property="article:tag" content=" permutation">
-<meta property="article:tag" content=" mode of operation">
+<meta property="article:tag" content="game of life">
+<meta property="article:tag" content=" python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/02/04/Serious%20Cryptography/">
+<link rel="canonical" href="http://yoursite.com/2020/02/05/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/">
 
 
 <script id="page-configurations">
@@ -73,7 +72,7 @@
   };
 </script>
 
-  <title>Serious Cryptography | Qasak's QQ Space</title>
+  <title>约翰康威的生命游戏 | Qasak's QQ Space</title>
   
 
 
@@ -171,8 +170,8 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/Serious%20Cryptography/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/05/%E7%94%9F%E5%91%BD%E6%B8%B8%E6%88%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -185,7 +184,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Serious Cryptography
+          约翰康威的生命游戏
         </h1>
 
         <div class="post-meta">
@@ -193,20 +192,14 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="Created: 2020-02-03 22:48:01" itemprop="dateCreated datePublished" datetime="2020-02-03T22:48:01-05:00">2020-02-03</time>
+              <time title="创建时间：2020-02-05 03:29:57 / 修改时间：10:41:12" itemprop="dateCreated datePublished" datetime="2020-02-05T03:29:57-05:00">2020-02-05</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-04 04:05:35" itemprop="dateModified" datetime="2020-02-04T04:05:35-05:00">2020-02-04</time>
-              </span>
 
           
-            <div class="post-description">simple cryptography</div>
+            <div class="post-description">from Peter Norvig's pytudes project</div>
 
         </div>
       </header>
@@ -217,32 +210,60 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Serious-Cryptography"><a href="#Serious-Cryptography" class="headerlink" title="Serious Cryptography"></a>Serious Cryptography</h1><p>Jean Philippe Aumasson</p>
-<h2 id="Vigenere-Cipher"><a href="#Vigenere-Cipher" class="headerlink" title="Vigenère  Cipher"></a><em>Vigenère  Cipher</em></h2><p>The first step to breaking it is to figure out the key’s length.</p>
-<p>The second step to breaking it is to determine the actual key using a method  called <em>frequency analysis</em>, which exploit the uneven distribution of letters in languages. For example, in English, <em>E</em> is the most common letter.</p>
-<h2 id="How-Ciphers-Work"><a href="#How-Ciphers-Work" class="headerlink" title="How Ciphers Work"></a>How Ciphers Work</h2><p>We can try to abstract out the workings of a cipher, first by identifying its two main components:  a permutation and a mode of operation. A <em>permutation</em> is a function that transforms an item (a letter or a group of bits) such that each item has a unique inverse(for example, the Caesar cipher’s three-letter shift).A <em>mode of operation</em> is an algorithm that uses a permutation to process messages of arbitrary size.</p>
-<h3 id="The-Permutation"><a href="#The-Permutation" class="headerlink" title="The Permutation"></a><em>The Permutation</em></h3><p>Most classical ciphers work by replacing each letter with another letter– in other words, bu performing a substitution. </p>
-<p>With a permutation, each letter has exactly one inverse.</p>
-<p>In order to be secure, a cipher’s permutation should satisfy three criteria：</p>
+        <h2 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h2><p>生命游戏的世界是一个无限的二维正交(orthogonal)网格，每个网格都处于两种可能的状态中的一种。空(empty)的或者活(live)的。每个单元格有八个相邻单元格，即水平，垂直或对角(diagonally)相邻的单元格。在每一步中，应用一下规则创造下一代：</p>
 <ul>
-<li><p><strong>The permutation should be determined by the key.</strong> so as to keep the permutation secret as long as the key is secret.</p>
-</li>
-<li><p><strong>Different keys should result in different permutations.</strong>  </p>
-</li>
-<li><p><strong>The permutation should look random.</strong></p>
+<li>任何有两个或三个邻居的活格子会存活到下一代</li>
+<li>任何空各自周围刚好有三个邻居的时候会在下一代变成活格子</li>
+<li>其他格子在下一代会变成空的</li>
+</ul>
+<h2 id="开发生命程序"><a href="#开发生命程序" class="headerlink" title="开发生命程序"></a>开发生命程序</h2><p>为了创造玩生命游戏的程序，我们先厘清以下词汇所代表的概念：</p>
+<ul>
+<li><strong>世界</strong></li>
+<li><strong>格子(cell)</strong></li>
+<li><strong>活/空</strong></li>
+<li><strong>邻居</strong></li>
+<li><strong>下一代</strong></li>
+<li><strong>展示(display)</strong></li>
+<li><strong>活邻居数(Live Neighbor Counts)</strong></li>
+</ul>
+<p>然后考虑如何实现它们:</p>
+<ul>
+<li><p><strong>世界</strong>：世界的需要表现格子的状态，空或者活。难办的是各自数是无限的，我们不能在电脑里存一个无限大的数组。为此，我想了三个办法来解决这个：</p>
+<p>​    1.改变规则：变无限为有限(世界边缘的格子邻居少，或者让他们环绕到世界另一边)</p>
+<p>​    2.在无限的网格中用一个有限的矩形窗口来盖住所有活的格子，比如说：</p>
+<p>[[0, 0, 0, 0, 0],</p>
+<p>[0, 0, 0, 1, 0],</p>
+<p>[0, 1, 0, 0, 0],</p>
+<p>[0, 0, 0, 0, 0]]</p>
+<p>​    3.用<strong>活着的格子的集合(set of  live cells)</strong>来表示世界，这个集合会随着代际变化缩小或者扩大，但是不用担心溢出。例如：world = {(3, 1), (1, 2), (1, 3), (2, 3)}</p>
+<p>我选择这个解决办法。</p>
 </li>
 </ul>
-<p>We’ll call a permutation that satisfies these criteria a <em>secure permutation.</em> But as you’ll see next, a secure permutation is necessary but not sufficient on its own for building a secure cipher. A cipher will also need a mode o operation to support message of any length.</p>
-<h3 id="The-Mode-of-Operation"><a href="#The-Mode-of-Operation" class="headerlink" title="The Mode of Operation"></a><em>The Mode of Operation</em></h3><p>To build a secure cipher, you must combine a secure permutation with a secure mode. Ideally, this combination prevents attackers from learning  anything about a message other than its length.</p>
-<h3 id="Why-Classical-Ciphers-Are-Insecure"><a href="#Why-Classical-Ciphers-Are-Insecure" class="headerlink" title="Why Classical Ciphers Are Insecure"></a><em>Why Classical Ciphers Are Insecure</em></h3><p>Classical ciphers are doomed to be insecure because they’re limited to operations you can do in your head or on a piece of paper.  They lack the computational power of a computer and are easily broken by simple commuter program. Let’s see the fundamental reason why that simplicity makes them insecure in today’s world.</p>
-<p>Remember that a ciphers’ permutation should look random in order to be secure. of course the best way to look random is to be random- that is . to select every permutation randomly from the set of all permutations. And there are many permutations to choose from. In the case of 26-letter English alphabet, there are approximately </p>
-<p>2^88^  permutations</p>
-<p>​                                        $26! ≈ 2^{88}$</p>
-<p>This number is huge: it’s of the same order of magnitude as the number of atoms in human body. But classical ciphers can only use a small fraction of those permutations-namely, those that need only simple operations(such as shifts)  and that have a short description(like a short algorithm or a small look-up table). The problem is that a secure permutation can’t accommodate both of these limitations.</p>
-<h2 id="Perfect-Encryption-The-One-Time-Pad"><a href="#Perfect-Encryption-The-One-Time-Pad" class="headerlink" title="Perfect Encryption: The One-Time Pad"></a>Perfect Encryption: The One-Time Pad</h2><p>the one-time pad is the most secure cipher. In fact, it guarantees perfect secrecy: even if an attacker has unlimited computing power, it’s impossible to learn anything about the plaintext except for its length</p>
-<h3 id="Encrypting-with-the-One-Time-Pad"><a href="#Encrypting-with-the-One-Time-Pad" class="headerlink" title="Encrypting with the One-Time Pad"></a><em>Encrypting with the One-Time Pad</em></h3><p>​                                    $C = P \oplus K$</p>
-<p>where C, P and K are bit strings of the same length</p>
-<p>$C_{1} \oplus C_{2} = ( P_{1} \oplus K )   \oplus ( P_{2} \oplus K ) = P_{1} \oplus P_{2} \oplus K \oplus K = P_{1} \oplus P_{2}$ </p>
+<ul>
+<li><p><strong>格子</strong>：每个格子用(x, y)表示</p>
+</li>
+<li><p><strong>活/空</strong>：格子是活的，表明它在活着的格子的集合中</p>
+</li>
+<li><p><strong>邻居</strong>：一个细胞有8个邻居，例如：</p>
+<p>neighbors((8, 8)) == [(7, 7), (8, 7), (9, 7), (7, 8), (9, 8), (7, 9), (8, 9), (9, 9)]</p>
+</li>
+<li><p><strong>展示</strong>：我们需要展示这个世界的状态，让我们先推迟(defer)一下。</p>
+</li>
+<li><p><strong>下一代</strong>：我们定义一个函数next_generation(word), 把世界作为输入，根据这个规则，返回一个新的世界，其中有新的活着的格子的集合，例如：</p>
+<p>next_generation({(3, 1), (1, 2), (1, 3), (2, 3)}) == {(1, 2), (1, 3), (2, 3)}</p>
+</li>
+<li><p><strong>活邻居数</strong>：我要知道每个格子有多少活邻居。一个好办法是用字典：{(x,  y):count}.但是哪些格子应该作为键呢？我们可以从活格子开始，然后把所有活格子的邻居加入。一个生成该字典的简单方法是创建一个Counter，并传递给所有活格子的邻居。这个有点像在做“反向”计数(counting “backwards”)，我们不是对每个格子询问：你有多少邻居，而是对每个活格子问，并对每个邻居计数。</p>
+</li>
+</ul>
+<p>以下是实现</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">next_generation</span><span class="params">(world)</span>:</span></span><br><span class="line">    <span class="string">"The set of live cells in the next generation."</span></span><br><span class="line">    possible_cells = counts = neighbor_counts(world)</span><br><span class="line">    <span class="keyword">return</span> &#123;cell <span class="keyword">for</span> cell <span class="keyword">in</span> possible_cells</span><br><span class="line">           <span class="keyword">if</span>(counts[cell] == <span class="number">3</span>)</span><br><span class="line">           <span class="keyword">or</span> (counts[cell] == <span class="number">2</span> <span class="keyword">and</span> cell <span class="keyword">in</span> world)&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">neighbor_counts</span><span class="params">(worlds)</span>:</span></span><br><span class="line">    <span class="string">"A &#123;cell: int&#125; counter of the number of live neighbors for each cell that has neighbors."</span></span><br><span class="line">    <span class="keyword">return</span> Counter(nb <span class="keyword">for</span> cell <span class="keyword">in</span> world</span><br><span class="line">                  <span class="keyword">for</span> nb <span class="keyword">in</span> neighbors(cell))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">neighbors</span><span class="params">(cell)</span>:</span></span><br><span class="line">    <span class="string">"All 8 adjacent neighbors of cell."</span></span><br><span class="line">    x, y = cell</span><br><span class="line">    <span class="keyword">return</span> [(x<span class="number">-1</span>, y<span class="number">-1</span>), (x, y<span class="number">-1</span>), (x+<span class="number">1</span>, y<span class="number">-1</span>), </span><br><span class="line">            (x<span class="number">-1</span>, y),             (x+<span class="number">1</span>, y), </span><br><span class="line">            (x<span class="number">-1</span>, y+<span class="number">1</span>), (x, y+<span class="number">1</span>), (x+<span class="number">1</span>, y+<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>run函数可以生成N代</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(world, n)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> g <span class="keyword">in</span> range(n):</span><br><span class="line">        world = next_generation(world)</span><br><span class="line">    <span class="keyword">return</span> world</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="展示（display）"><a href="#展示（display）" class="headerlink" title="展示（display）"></a>展示（display）</h2><p>现在我们看下如何展示世界。</p>
 
     </div>
 
@@ -258,13 +279,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/03/hello-world/" rel="prev" title="Hello Helen">
-      <i class="fa fa-chevron-left"></i> Hello Helen
+    <a href="/2020/02/05/%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0-%E6%91%98%E5%BD%95/" rel="prev" title="自私的基因-摘录">
+      <i class="fa fa-chevron-left"></i> 自私的基因-摘录
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/02/05/%E8%87%AA%E7%A7%81%E7%9A%84%E5%9F%BA%E5%9B%A0-%E6%91%98%E5%BD%95/" rel="next" title="自私的基因-摘录">
-      自私的基因-摘录 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -315,16 +333,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Serious-Cryptography"><span class="nav-number">1.</span> <span class="nav-text">Serious Cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vigenere-Cipher"><span class="nav-number">1.1.</span> <span class="nav-text">Vigenère  Cipher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-Ciphers-Work"><span class="nav-number">1.2.</span> <span class="nav-text">How Ciphers Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Permutation"><span class="nav-number">1.2.1.</span> <span class="nav-text">The Permutation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Mode-of-Operation"><span class="nav-number">1.2.2.</span> <span class="nav-text">The Mode of Operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Classical-Ciphers-Are-Insecure"><span class="nav-number">1.2.3.</span> <span class="nav-text">Why Classical Ciphers Are Insecure</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perfect-Encryption-The-One-Time-Pad"><span class="nav-number">1.3.</span> <span class="nav-text">Perfect Encryption: The One-Time Pad</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Encrypting-with-the-One-Time-Pad"><span class="nav-number">1.3.1.</span> <span class="nav-text">Encrypting with the One-Time Pad</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#规则"><span class="nav-number">1.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发生命程序"><span class="nav-number">2.</span> <span class="nav-text">开发生命程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#展示（display）"><span class="nav-number">3.</span> <span class="nav-text">展示（display）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
